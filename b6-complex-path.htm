@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Drawing multiple lines</title>
+  <title>Drawing a path combining lines and curves</title>
   <meta charset="UTF-8"> 
 </head>
 <body>
@@ -12,13 +12,17 @@
 
 <script>
 var context = document.getElementById("canvas1").getContext("2d");
-context.moveTo(100,60);
-context.lineTo(200,30);
-context.lineTo(300,90);
-context.lineTo(400,30);
+
+context.beginPath();
+context.moveTo(80,90);
+context.lineTo(80,50);
+context.bezierCurveTo(80,20,110,20,110,50);
+context.bezierCurveTo(110,80,140,80,140,50);
+context.lineTo(180,100);
+context.lineTo(150,120);
+context.lineTo(100,120);
+context.lineTo(80,90);
 context.stroke();
-// You can stack multiple canvases so you only have to redraw
-// what your are moving. 
 </script>
 
 <!-- ******************************************* -->

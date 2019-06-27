@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Using toBlob to create a PNG image</title>
+  <meta charset="UTF-8"> 
+</head>
+<body>
+<!-- ******************************************* -->
+
+<canvas id="canvas1" width="600" height="600" style="border:1px solid red">
+</canvas>
+
+<script>
+
+var canvas1= document.getElementById('canvas1');
+var context = canvas1.getContext("2d");
+
+context.fillStyle = "rgb(255,255,0)";
+context.fillRect(100,100,200,100);
+
+// toBlob(callback, optional mimetype, optional quality between 0 and 1 
+// The default is to create an image/png 
+canvas1.toBlob(function(blob) {
+  var newImg = document.createElement('img'),
+      url = URL.createObjectURL(blob);
+
+  newImg.onload = function() {
+    // no longer need to read the blob so it's revoked
+    URL.revokeObjectURL(url);
+  };
+
+  newImg.src = url;
+  document.body.appendChild(newImg);
+});
+
+</script> 
+
+<!-- ******************************************* -->
+</body>
+</html>

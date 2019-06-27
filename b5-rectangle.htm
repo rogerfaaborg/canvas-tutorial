@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Drawing multiple lines</title>
+  <title>Drawing a Rectangle</title>
   <meta charset="UTF-8"> 
 </head>
 <body>
@@ -12,16 +12,15 @@
 
 <script>
 var context = document.getElementById("canvas1").getContext("2d");
-context.moveTo(100,60);
-context.lineTo(200,30);
-context.lineTo(300,90);
-context.lineTo(400,30);
-context.stroke();
-// You can stack multiple canvases so you only have to redraw
-// what your are moving. 
-</script>
 
+context.beginPath();
+// rect(left,top,width,height) 
+context.rect(100,100,300,150);
+context.stroke();
+
+</script>
 <!-- ******************************************* -->
+
 </body>
 </html>
 

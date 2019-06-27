@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Drawing multiple lines</title>
+  <title>Drawing a circle</title>
   <meta charset="UTF-8"> 
 </head>
 <body>
@@ -12,13 +12,15 @@
 
 <script>
 var context = document.getElementById("canvas1").getContext("2d");
-context.moveTo(100,60);
-context.lineTo(200,30);
-context.lineTo(300,90);
-context.lineTo(400,30);
+
+context.beginPath();
+context.arc(100,75,50,0,2.0*Math.PI);
 context.stroke();
-// You can stack multiple canvases so you only have to redraw
-// what your are moving. 
+
+// arc(centerx,centery,radius,start angle,end angle,false) 
+// coordinates are in pixels and false means the default of drawing clockwise 
+// Start at 0 and end at 2*PI draws a circle. 
+// Show the clock demo
 </script>
 
 <!-- ******************************************* -->

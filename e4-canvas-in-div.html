@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>A canvas inside a div</title>
+  <meta charset="UTF-8"> 
+</head>
+<body>
+<!-- ******************************************* -->
+
+<div style="max-width:200px; max-height:200px; overflow:scroll; border:1px solid black">
+<canvas id="canvas1" width="300" height="300" style="border:1px solid red">
+</canvas>
+</div>
+
+<script>
+var context = document.getElementById('canvas1').getContext("2d");
+
+context.fillStyle = "red";
+context.fillRect(100,100,100,100);
+
+context.lineWidth = 5.0;
+context.moveTo(200,250);
+context.lineTo(300,150);
+context.stroke();
+</script> 
+
+<!-- ******************************************* -->
+</body>
+</html>
+
+

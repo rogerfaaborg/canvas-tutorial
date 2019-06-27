@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Drawing multiple lines</title>
+  <title>Drawing an arc </title>
   <meta charset="UTF-8"> 
 </head>
 <body>
@@ -12,13 +12,14 @@
 
 <script>
 var context = document.getElementById("canvas1").getContext("2d");
-context.moveTo(100,60);
-context.lineTo(200,30);
-context.lineTo(300,90);
-context.lineTo(400,30);
+
+context.beginPath();
+context.arc(100,75,50,0,1.5*Math.PI);
 context.stroke();
-// You can stack multiple canvases so you only have to redraw
-// what your are moving. 
+
+// arc(centerx,centery,radius,start angle,end angle,false) 
+// coordinates are in pixels and false means the default of drawing clockwise 
+// There is also an arcTo if you want the arc to be part of other lines and curves 
 </script>
 
 <!-- ******************************************* -->

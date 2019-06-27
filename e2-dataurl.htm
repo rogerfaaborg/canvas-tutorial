@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="UTF-8"> 
+</head>
+<body>
+<!-- ******************************************* -->
+
+<canvas id="canvas1" width=5 height=5 >
+</canvas>
+
+<script>
+var canvas = document.getElementById('canvas1');
+var dataURL = canvas.toDataURL();
+console.log(dataURL);
+
+// The console.log shows this following:
+//data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAA
+//DElEQVQImWNgoBMAAABpAAFEI8ARAAAAAElFTkSuQmCC
+
+</script> 
+
+<!-- ******************************************* -->
+</body>
+</html>
+
+

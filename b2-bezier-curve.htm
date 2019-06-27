@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Drawing a line</title>
+  <title>Drawing a Bezier Curve</title>
   <meta charset="UTF-8"> 
 </head>
 <body>
@@ -11,14 +11,14 @@
 </canvas>
 
 <script>
-var mycanvas = document.getElementById("canvas1");
-var context = mycanvas.getContext("2d");
+var context = document.getElementById("canvas1").getContext("2d");
+
+context.beginPath();
 context.moveTo(100,100);
-context.lineTo(500,500); // You can draw outside the canvas. 
+context.bezierCurveTo(200,200,200,50,300,100);
 context.stroke();
-// Canvas has no memory that it drew the line. You have to do that. 
-// Canvas just changes the pixels. 
-// You have to call stroke or nothing is drawn. 
+// context.bezierCurveTo(control1x,control1y,control2x,control2y,endx,endy);
+// quadratic Bezier curves have only one control point, so you have less control.
 </script>
 
 <!-- ******************************************* -->

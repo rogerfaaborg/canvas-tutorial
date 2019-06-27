@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clipping</title>
+  <meta charset="UTF-8"> 
+</head>
+<body>
+<!-- ******************************************* -->
+
+<canvas id="myCanvas" width="300" height="150" style="border:1px solid 'red'">
+</canvas>
+
+<script>
+var context = document.getElementById("myCanvas").getContext("2d");
+
+// Draw a rectangle
+context.rect(50, 20, 200, 120);
+context.stroke();
+
+// This clips drawing to 50,20,200,120 
+//context.clip();
+
+// Draw red rectangle
+context.fillStyle = "red";
+context.fillRect(0, 0, 150, 100);
+</script> 
+
+<!-- ******************************************* -->
+</body>
+</html>

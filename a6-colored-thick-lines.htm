@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Drawing multiple lines</title>
+  <title>Drawing colored and thick lines</title>
   <meta charset="UTF-8"> 
 </head>
 <body>
@@ -12,16 +12,25 @@
 
 <script>
 var context = document.getElementById("canvas1").getContext("2d");
+context.strokeStyle = "orange";
+// context.strokeStyle = "#FFA500";              
+// context.strokeStyle = "rgb(255,165,0)";       
+// context.strokeStyle = "rgba(255,165,0,1.0)";  
+// Also hsl and hsla and others, and gradients
+
+// lineWidth is in pixels. 
+context.lineWidth = 10.0;
+
 context.moveTo(100,60);
 context.lineTo(200,30);
 context.lineTo(300,90);
 context.lineTo(400,30);
 context.stroke();
-// You can stack multiple canvases so you only have to redraw
-// what your are moving. 
 </script>
 
 <!-- ******************************************* -->
 </body>
 </html>
 
+<!-- You can stack multiple canvases so you only have to redraw
+     what your are moving. -->

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rotating drawings</title>
+  <meta charset="UTF-8"> 
+</head>
+<body>
+<!-- ******************************************* -->
+
+<canvas id="canvas1" width=600 height=300 style="border:1px solid red;">
+</canvas>
+
+<script>
+var context = document.getElementById("canvas1").getContext("2d");
+
+// Non-rotated rectangle
+context.fillStyle = 'gray';
+context.fillRect(100, 10, 80, 20);
+
+// Rotated rectangle
+context.rotate(45 * Math.PI / 180);
+context.fillStyle = 'red';
+context.fillRect(100, 0, 80, 20);
+// Angles are measured positive downloads and are in radians.
+</script> 
+
+<!-- ******************************************* -->
+</body>
+</html>
+
+

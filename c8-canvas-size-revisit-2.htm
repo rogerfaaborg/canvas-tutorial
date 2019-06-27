@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sizing a canvas with CSS is like sizing an image.</title>
+  <meta charset="UTF-8"> 
+</head>
+<body>
+<!-- ******************************************* -->
+
+<p>This is a canvas the default size of 300 X 150 with no CSS sizing.</p>
+<canvas id="canvas1" style="border:1px solid red;">
+</canvas>
+
+<p>This is a canvas with CSS making it 600 pixels wide.</p>
+<canvas id="canvas2" id="canvas2id" style="border:1px solid green; width:600px; height:300px;">
+</canvas>
+
+<script>
+var context1 = document.getElementById("canvas1").getContext("2d");
+var context2 = document.getElementById("canvas2").getContext("2d");
+
+context1.fillStyle = "red";
+context1.fillRect(0,0,100,100); 
+
+context2.fillStyle = "green";
+context2.fillRect(0,0,100,100); 
+</script>
+
+<!-- The safest is to use canvas.width and not use CSS to size a canvas. -->
+<!-- You get into problems when you get event.clientX and CSS has sized the canvas. -->
+
+<!-- ******************************************* -->
+</body>
+</html>
+
