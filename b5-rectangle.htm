@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Drawing a Rectangle</title>
+  <title>b5 - Drawing a Rectangle</title>
   <meta charset="UTF-8"> 
 </head>
 <body>
@@ -14,8 +14,12 @@
 var context = document.getElementById("canvas1").getContext("2d");
 
 context.beginPath();
+context.strokeStyle = "blue";
+context.fillStyle = "yellow";
+context.lineWidth = 10;
 // rect(left,top,width,height) 
 context.rect(100,100,300,150);
+context.fill();
 context.stroke();
 
 </script>

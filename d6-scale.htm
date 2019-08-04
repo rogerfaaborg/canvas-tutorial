@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Using context.scale</title>
+  <title>d6 - Using context.scale</title>
   <meta charset="UTF-8"> 
 </head>
 <body>
@@ -12,6 +12,10 @@
 
 <script>
 var context = document.getElementById("canvas1").getContext("2d");
+
+context.beginPath();
+context.font = "20px Arial";
+context.fillText("context.scale(x,y)",20,200);
 
 context.strokeRect(10,10,100,50);
 context.scale(2, 2);

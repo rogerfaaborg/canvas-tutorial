@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>e1 - Using context.transform</title>
   <meta charset="UTF-8"> 
 </head>
 <body>
@@ -12,6 +12,10 @@
 
 <script>
 var context = document.getElementById("canvas1").getContext("2d");
+
+context.beginPath();
+context.font = "20px Arial";
+context.fillText("context.transform(matix components)",120,250);
 
 var sin = Math.sin(Math.PI / 6);
 var cos = Math.cos(Math.PI / 6);

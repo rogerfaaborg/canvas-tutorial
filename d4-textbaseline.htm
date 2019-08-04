@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Drawing text using canvas textAlign.</title>
+  <title>d4 - Using textBaseline.</title>
   <meta charset="UTF-8"> 
 </head>
 <body>
@@ -13,6 +13,10 @@
 <script>
 var context = document.getElementById("canvas1").getContext("2d");
 
+context.beginPath();
+context.font = "20px Arial";
+context.fillText("context.textBaseline, alphabetic is the default",20,60);
+
 //Draw a red line at y = 200
 context.strokeStyle = "red";
 context.moveTo(5, 100);
@@ -23,19 +27,19 @@ context.font = "20px Arial"
 
 //Place each word at y = 100 with different textBaseline values
 context.textBaseline = "top";
-context.fillText("Top", 5, 100);
+context.fillText("top", 5, 100);
 
 context.textBaseline = "bottom";
-context.fillText("Bottom", 50, 100);
+context.fillText("bottom", 50, 100);
 
 context.textBaseline = "middle";
-context.fillText("Middle", 120, 100);
+context.fillText("middle", 120, 100);
 
 context.textBaseline = "alphabetic";
-context.fillText("Alphabetic", 190, 100);
+context.fillText("alphabetic", 190, 100);
 
 context.textBaseline = "hanging";
-context.fillText("Hanging", 290, 100); 
+context.fillText("hanging", 290, 100); 
 // Alphabetic is the default
 </script>
 

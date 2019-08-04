@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The drawImage command</title>
+  <title>e3 - The drawImage command</title>
   <meta charset="UTF-8"> 
 </head>
 <body>
@@ -13,6 +13,10 @@
 <script>
 var mycanvas = document.getElementById('canvas1');
 var context = mycanvas.getContext("2d");
+
+context.beginPath();
+context.font = "30px Arial";
+context.fillText("context.drawImage",10,40);
 
 context.fillStyle = "red";
 context.fillRect(100,100,100,100);
