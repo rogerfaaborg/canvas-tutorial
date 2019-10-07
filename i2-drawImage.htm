@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>i2 - The drawImage command</title>
+  <meta charset="UTF-8"> 
+</head>
+<body>
+<!-- ******************************************* -->
+
+<canvas id="canvas1" width="600" height="600" style="border:1px solid red">
+</canvas>
+
+<script>
+var mycanvas = document.getElementById('canvas1');
+var context = mycanvas.getContext("2d");
+
+context.beginPath();
+context.font = "30px Arial";
+context.fillText("context.drawImage",10,40);
+
+context.fillStyle = "red";
+context.fillRect(100,100,100,100);
+
+context.lineWidth = 5.0;
+context.moveTo(200,250);
+context.lineTo(300,150);
+context.stroke();
+
+// drawImage(image,destinationx,destinationy,destinationwidth,destinationheight)
+context.drawImage(mycanvas,400,100,100,100);
+// Another variation allows you to pick part of the source diagram
+// drawImage(image,sourcex,sourcey,sourcewidth,sourceheight,destinationx,destinationy,destinationwidth,destinationheight)
+// Show the magnify.html demo from David Geary
+
+</script> 
+
+<!-- ******************************************* -->
+</body>
+</html>
+
+

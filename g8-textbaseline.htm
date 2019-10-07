@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>g8 - Using textBaseline.</title>
+  <meta charset="UTF-8"> 
+</head>
+<body>
+<!-- ******************************************* -->
+
+<canvas id="canvas1" width=600 height=300 style="border:1px solid red;">
+</canvas>
+
+<script>
+var context = document.getElementById("canvas1").getContext("2d");
+
+context.beginPath();
+context.font = "20px Arial";
+context.fillText("context.textBaseline, alphabetic is the default",20,60);
+
+//Draw a red line at y = 200
+context.strokeStyle = "red";
+context.moveTo(5, 100);
+context.lineTo(395, 100);
+context.stroke();
+
+context.font = "20px Arial"
+
+//Place each word at y = 100 with different textBaseline values
+context.textBaseline = "top";
+context.fillText("top", 5, 100);
+
+context.textBaseline = "bottom";
+context.fillText("bottom", 50, 100);
+
+context.textBaseline = "middle";
+context.fillText("middle", 120, 100);
+
+context.textBaseline = "alphabetic";
+context.fillText("alphabetic", 190, 100);
+
+context.textBaseline = "hanging";
+context.fillText("hanging", 290, 100); 
+// Alphabetic is the default
+</script>
+
+<!-- ******************************************* -->
+</body>
+</html>
+
+

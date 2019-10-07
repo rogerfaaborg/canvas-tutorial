@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>e4 - Filling a rectangle with a linear gradient fill</title>
+  <meta charset="UTF-8"> 
+</head>
+<body>
+<!-- ******************************************* -->
+
+<canvas id="canvas1" width="600" height="300" style="border:1px solid red;">
+</canvas>
+
+<script>
+var context = document.getElementById("canvas1").getContext("2d");
+
+context.beginPath();
+
+var gradient = context.createLinearGradient(100,100,300,100);
+// createLinearGradient(startx,starty,endx,endy) 
+
+gradient.addColorStop(0, "red");
+gradient.addColorStop(1, "yellow");
+// First parameter is a value between 0.0 and 1.0 that          
+// represents the position between start and end in a gradient. 
+
+context.fillStyle = gradient;
+context.fillRect(100,50,200,100);
+// fillRect(left,top,width,height)  
+
+gradient.addColorStop(0.25, "red");
+gradient.addColorStop(0.75, "yellow");
+// First parameter is a value between 0.0 and 1.0 that          
+// represents the position between start and end in a gradient. 
+// Up to 0.25 the color is solid red
+// From .75 to 1.0, the color is solid yellow
+
+context.fillStyle = gradient;
+context.fillRect(100,160,200,100);
+// fillRect(left,top,width,height)  
+
+
+// Show linear gradient in rfdraw 
+</script>
+
+<!-- ******************************************* -->
+</body>
+</html>
+

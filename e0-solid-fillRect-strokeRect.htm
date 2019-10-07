@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>e0 - Using strokeRect, fillRect and clearRect</title>
+  <meta charset="UTF-8"> 
+</head>
+<body>
+<!-- ******************************************* -->
+
+<canvas id="canvas1" width="600" height="600" style="border:1px solid red;">
+</canvas>
+
+<script>
+var canvas1 = document.getElementById("canvas1");
+var context = canvas1.getContext("2d");
+
+// strokeRect(left,top,width,height) - upper left
+context.lineWidth = 10;
+context.strokeStyle = "red";
+context.strokeRect(100,100,200,100);
+
+// fillRect(left,top,width,height) - upper right
+context.fillStyle = "orange";
+context.fillRect(350,100,200,100);
+
+// fillRect first, then strokeRect - lower left
+context.fillRect(100,300,200,100);
+context.strokeRect(100,300,200,100);
+
+// strokeRect first, then fillRect - lower right
+context.strokeRect(350,300,200,100);
+context.fillRect(350,300,200,100);
+
+// There is also a clearRect(left,top,width,height)
+// Click anywhere on the canvas to erase it.
+canvas1.onmousedown = function(e) {
+context.clearRect(0,0,canvas1.width,canvas1.height);
+};
+</script>
+
+<!-- ******************************************* -->
+</body>
+</html>
+

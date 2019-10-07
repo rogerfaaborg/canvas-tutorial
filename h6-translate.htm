@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>h6 - Using context.translate</title>
+  <meta charset="UTF-8"> 
+</head>
+<body>
+<!-- ******************************************* -->
+
+<canvas id="canvas1" width=600 height=300 style="border:1px solid red;">
+</canvas>
+
+<script>
+var context = document.getElementById("canvas1").getContext("2d");
+
+context.beginPath();
+context.font = "20px Arial";
+context.fillText("context.translate(x,y)",20,200);
+
+// First translate the red square
+context.translate(110, 30);
+context.fillStyle = 'red';
+context.fillRect(0, 0, 80, 80);
+
+// Reset current transformation matrix to the identity matrix
+context.setTransform(1, 0, 0, 1, 0, 0);
+
+// Draw the untranslated gray square
+context.fillStyle = 'gray';
+context.fillRect(0, 0, 80, 80);
+</script> 
+
+<!-- ******************************************* -->
+</body>
+</html>
+
+

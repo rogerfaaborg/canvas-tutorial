@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>b6 - The beginPath command</title>
+  <meta charset="UTF-8"> 
+</head>
+<body>
+<!-- ******************************************* -->
+
+<canvas id="canvas1" width="600" height="300" style="border:1px solid red;">
+</canvas>
+
+<script>
+var context = document.getElementById("canvas1").getContext("2d");
+
+// beginPath will reset the current path and begin a new one 
+context.beginPath();
+context.strokeStyle = "orange";
+context.lineWidth = 10.0;
+context.moveTo(100,60);
+context.lineTo(200,30);
+context.stroke();
+
+context.beginPath();  /* Try without this line. */
+context.strokeStyle = "green";
+context.lineWidth = 5.0;
+context.moveTo(300,90);
+context.lineTo(400,30);
+context.stroke();
+
+</script>
+
+<!-- ******************************************* -->
+</body>
+</html>
+

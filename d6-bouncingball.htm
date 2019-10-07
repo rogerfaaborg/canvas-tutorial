@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>d6 - A bouncing ball</title>
+  <meta charset="UTF-8"> 
+</head>
+<body>
+<!-- ******************************************* -->
+
+<!-- This one has a black border -->
+<canvas id="canvas1" width=1000 height=600 style="border:1px solid #000000;"> 
+</canvas>
+
+<script>
+var canvas = document.getElementById("canvas1");
+var context = canvas.getContext("2d");
+
+var ball =
+   { 
+   x: 150,   //center
+   y: 250,
+   lastX: 150,  //last center
+   lastY: 250,
+   velocityX: -3.2,
+   velocityY: 3.5,
+   radius: 25,
+   color: "rgba(255,0,255,1)"
+   }
+
+
+/*
+** Draw the ball
+*/
+
+function draw() 
+{
+"use strict";
+context.save();
+context.beginPath();
+context.arc(ball.x, ball.y, ball.radius, 0, Math.PI*2, false);
+context.fillStyle = ball.color;
+context.fill();
+context.restore();
+}
+
+
+/*
+** If the ball hits the edge of the canvas, reverse it's velociy
+**  so it will stay on the canvas.
+*/
+
+function update()
+{
+"use strict";
+/* If the ball goes too far right, reverse it's velocity. */
+if ( (ball.x + ball.velocityX +ball.radius) > context.canvas.width )
+   {
+   ball.velocityX = -ball.velocityX;
+   }
+
+/* If the ball goes too far left, reverse it's velocity. */
+if ( (ball.x + ball.velocityX -ball.radius) < 0 )
+   {
+   ball.velocityX = -ball.velocityX;
+   }
+ 
+/* If the ball goes too far down, reverse it's velocity. */
+if ( (ball.y + ball.velocityY +ball.radius) > context.canvas.height )
+   {
+   ball.velocityY = -ball.velocityY;
+   }
+
+/* If the ball goes too far up, reverse it's velocity. */
+if ( (ball.y + ball.velocityY -ball.radius) < 0 )
+   {
+   ball.velocityY = -ball.velocityY;
+   }
+
+/* Move the ball a fixed amount */
+ball.x += ball.velocityX;
+ball.y += ball.velocityY;
+
+}  /* End of the update function */
+
+
+
+function animate() 
+{
+"use strict";
+context.clearRect(0,0,canvas.width,canvas.height);
+update();
+draw();
+//window.requestAnimationFrame(animate);
+//  Comment above if using setInterval
+}
+
+
+window.onload = function (){
+window.setInterval(animate,1000/60);
+//window.setInterval(animate,500);  /* 1. Slow it down */
+}
+
+//window.onload = function (){        /* Try requestAnimationFrame */
+//window.requestAnimationFrame(animate);
+//}
+
+
+</script>
+
+<!-- ******************************************* -->
+</body>
+</html>
+
+
